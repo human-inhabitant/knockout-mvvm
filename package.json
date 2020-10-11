@@ -13,12 +13,12 @@
     "express": "^4.17.1",
     "express-session": "^1.17.1",
     "jquery": "^3.5.1",
+    "knockout": "^3.5.1",
     "mongodb": "^3.6.2",
     "mongoose": "^5.10.7",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
-    "passport-local": "^1.0.0",
-    "pug": "^3.0.0"
+    "passport-local": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^7.10.0",
@@ -27,7 +27,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "DEBUG=app,app:* nodemon app.js",
+    "start": "DEBUG=server,server:* nodemon server.js",
     "test": "mocha tests/**/*Tests.js"
   },
   "repository": {
