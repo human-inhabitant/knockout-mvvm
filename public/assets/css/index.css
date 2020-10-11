@@ -1,0 +1,50 @@
+body.container {
+  font-family: 'Source Code Pro', monospace;
+  margin-top: 1rem;
+}
+:focus {
+  outline: none !important;
+}
+
+.main {}
+.showroom {}
+.photoThumbnail {
+  border: thin solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.625rem;
+  float: left;
+  height: auto;
+  max-height: 170px;
+  max-width: 85px;
+  margin: 0.625rem 0.625rem 0;
+  padding: 1rem;
+  width: auto;
+}
+.caption {
+  font-weight: bold;
+  color: rgba(0, 0, 128, 0.8);
+}
+.currencyInput {
+  text-align: right;
+  width: 100px;
+}
+.integerInput {
+  text-align: center;
+  width: 45px;
+}
+.productsSelect {
+  width: 630px;
+}
+.alignedCaption {
+  float: left;
+  width: 56px;
+}
+.textValues {
+  margin: 0 4px 0 4px;
+  color: rgb(47, 123, 163);
+}
+.carResults {
+  margin: 50px 20px;
+}
+.list-unstyled li {
+  padding: 1rem 0;
+}
