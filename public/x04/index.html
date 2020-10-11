@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <title></title>
+  </head>
+  <body class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="main">
+          <div class="showroom">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Ext. Price</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody data-bind="foreach: lines">
+                <tr>
+                  <td>
+                    <select class="form-control input-sm" data-bind="options:$parent.products, value:product, optionsText: 'shortDescription', optionsCaption:'Select a product ...'">
+                    </select>
+                  </td>
+                  <td data-bind="if: product">
+                    <span data-bind='text: my.formatCurrency(product().salePrice())'></span>
+                  </td>
+                  <td>
+                    <input class="form-control input-sm integerInput" data-bind='visible: product, value: quantity, valueUpdate: "afterkeydown"'/>
+                  </td>
+                  <td>
+                    <span data-bind='visible: product, text: my.formatCurrency(extendedPrice())'></span>
+                  </td>
+                  <td>
+                    <a href='#' data-bind='click: $parent.removeLine'>Remove</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              Total value: <span data-bind="text: my.formatCurrency(grandTotal())"></span>
+            </p>
+            <button class="btn btn-default" data-bind="click: addLine">Add product</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/all.min.js"></script>
+    <script src="/js/knockout-latest.debug.js"></script>
+    <script src="/assets/data/data.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -5,16 +5,32 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="/css/all.min.css" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
     <title></title>
   </head>
   <body class="container">
-    Base server...
+
+    <div>
+      <h2>Without Knockout</h2>
+      <div class="well well-sm">
+        <span>Item number:</span><span id="guitarItemNumber"></span>
+        <br />
+        <span>Guitar model:</span><input id="guitarModel" />
+        <span>Sales price:</span><input id="guitarSalesPrice" />
+      </div>
+      <h2>With Knockout</h2>
+      <div class="well well-sm">
+        <span>Item number:</span><span data-bind="text:itemNumber"></span>
+        <br />
+        <span>Guitar model:</span><input data-bind="value:model" />
+        <span>Sales price:</span><input data-bind="value:salePrice" />
+      </div>
+    </div>
+
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/all.min.js"></script>
     <script src="/js/knockout-latest.debug.js"></script>
-
     <script src="index.js"></script>
   </body>
 </html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <title></title>
+  </head>
+  <body class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="main">
+          <div class="showroom">
+            <div>
+              <img class="photoThumbnail" data-bind="attr: {src:product().photoUrl,title:product().shortDescription}"/>
+            </div>
+            <div>
+              <span class="caption">Product:</span>
+              <span data-bind="text:product().shortDescription"></span>
+            </div>
+            <div>
+              <span class="caption">Unit Price:</span>
+              <input class="form-control input-sm currencyInput" data-bind="value: product().salePrice, valueUpdate:'afterkeydown'" />
+            </div>
+            <div>
+              <span class="caption">Quantity:</span>
+              <input class="form-control input-sm integerInput" data-bind="value: quantity, valueUpdate: 'afterkeydown'" />
+            </div>
+            <div>
+              <span class="caption">Extended Price:</span>
+              <input class="form-control input-sm currencyInput" data-bind="value:extendedPrice, valueUpdate:'afterkeydown'" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/all.min.js"></script>
+    <script src="/js/knockout-latest.debug.js"></script>
+    <script src="/assets/data/data.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

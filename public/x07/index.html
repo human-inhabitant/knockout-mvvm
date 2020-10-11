@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <title></title>
+  </head>
+  <body class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div id="main">
+          <div class="showroom">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <span class="badge" data-bind="text: products().length"></span>
+                <span>Products</span>
+              </div>
+              <div class="panel-body">
+                <select class="form-control input-sm"
+                        multiple="multiple"
+                        size="10"
+                        data-bind="options:products, selectedOptions:selectedProducts">
+                </select>
+                <div class="btn-toolbar">
+                  <div class="btn-group">
+                    <button class="btn btn-sm btn-default" data-bind="click: removeSelected, enable: productsAreSelected">Remove</button>
+                    <button class="btn btn-sm btn-default" data-bind="click: sortProducts, enable: productsExist">Sort</button>
+                    <button class="btn btn-sm btn-default" data-bind="click: reverseProducts, enable: productsExist">Reverse</button>
+                  </div>
+                </div>
+              </div>
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <form data-bind="submit:addItem">
+                    Add item via push:
+                    <input type="text" class="form-control input-sm" data-bind='value:itemToAdd, valueUpdate: "afterkeydown"' />
+                    <button type="submit" class="btn btn-sm btn-default" data-bind="enable: itemToAdd().length > 0">Push</button> <span>(You can also press Enter to submit)</span>
+                  </form>
+                </li>
+                <li class="list-group-item">
+                  Add via splicing:
+                  <input type="text" class="form-control input-sm" data-bind='value:itemToAddViaSplice, valueUpdate: "afterkeydown"' />
+                  <button class="btn btn-sm btn-default" data-bind="click: spliceProduct, enable: canAddViaSplice">Insert before 1st selected item</button>
+                </li>
+                <li class="list-group-item">
+                  Replace an item:
+                  <input type="text" class="form-control input-sm" data-bind='value:replacementItem, valueUpdate: "afterkeydown"' />
+                  <button class="btn btn-sm btn-default" data-bind="click: replaceProduct, enable: canReplace">Replace 1st selected item</button>
+                </li>
+                <li class="list-group-item">
+                  Add via unshift:
+                  <input type="text" class="form-control input-sm" data-bind='value:itemToAddViaUnshift, valueUpdate: "afterkeydown"' />
+                  <button class="btn btn-sm btn-default" data-bind="click: unshiftProduct, enable: canAddViaUnshift">Insert at beginning of array</button>
+                </li>
+                <li class="list-group-item">
+                  Remove via shift:
+                  <button class="btn btn-sm btn-default" data-bind="click: shiftProduct, enable: productsExist">Remove first item of array, and return it</button>
+                </li>
+                <li class="list-group-item">
+                  Remove via pop:
+                  <button class="btn btn-sm btn-default" data-bind="click: popProduct, enable: productsExist">Remove last item of array, and return it</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/all.min.js"></script>
+    <script src="/js/knockout-latest.debug.js"></script>
+    <script src="/assets/data/data.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

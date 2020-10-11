@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <title></title>
+  </head>
+  <body class="container">
+    <div class="row">
+      <div class="col-xs-4">
+        <div id="main">
+          <ul class="list-unstyled">
+            <li>
+              <span class="alignedCaption">Make: </span>
+              <!-- ko with: makes() -->
+              <span data-bind="text:length"></span>
+              <!-- /ko -->
+              <select class="form-control input-sm" data-bind="options: makes, value: selectedMake, optionsText: 'name', optionsCaption: 'Choose a make'">
+              </select>
+            </li>
+            <li>
+              <span class="alignedCaption">Model: </span>
+              <!-- ko with: models() -->
+              <span data-bind="text:length"></span>
+              <!-- /ko -->
+              <select class="form-control input-sm" data-bind="options: models, value: selectedModel, optionsText: 'name', optionsCaption: 'Choose a model'">
+              </select>
+            </li>
+            <li>
+              <span class="alignedCaption">Car: </span>
+              <!-- ko with: cars() -->
+              <span data-bind="text:length"></span>
+              <!-- /ko -->
+              <select class="form-control input-sm" data-bind="options: cars, value: selectedCar, optionsText: 'desc', optionsCaption: 'Choose a car'">
+              </select>
+
+            </li>
+          </ul>
+          <div class="carResults">
+            <span class="caption">Your Selections</span>
+            <div>
+              <span>selectedMake:</span>
+              <!-- ko with: selectedMake-->
+              <span data-bind="text:name" class="textValues"></span>
+              <!-- /ko -->
+            </div>
+            <div>
+              <span>selectedModel:</span>
+              <!-- ko with: selectedModel-->
+              <span data-bind="text:name" class="textValues"></span>
+              <!-- /ko -->
+            </div>
+            <div>
+              <span>selectedCar:</span>
+              <!-- ko with: selectedCar-->
+              <span data-bind="text:desc" class="textValues"></span>
+              <!-- /ko -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/all.min.js"></script>
+    <script src="/js/knockout-latest.debug.js"></script>
+    <script src="/assets/utils/utils.js"></script>
+    <script src="/assets/data/data.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
