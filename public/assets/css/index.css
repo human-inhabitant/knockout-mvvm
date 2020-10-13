@@ -9,8 +9,8 @@ body.container {
 .main {}
 .showroom {}
 .photoThumbnail {
-  border: thin solid rgba(0, 0, 0, 0.2);
-  border-radius: 0.625rem;
+  /* border: thin solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.625rem; */
   float: left;
   height: auto;
   max-height: 170px;
