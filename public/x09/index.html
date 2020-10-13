@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="/css/all.min.css" />
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <title></title>
+  </head>
+  <body class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <table class="table table-striped">
+          <colgroup>
+            <col style="width:20%"/>
+            <col style="width:30%"/>
+            <col style="width:50%"/>
+          </colgroup>
+          <thead>
+            <tr>
+              <th>Bindings</th>
+              <th>Target Value</th>
+              <th>Source Value(s)</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <tr>
+              <td>
+                <div class="caption">text</div>
+              </td>
+              <td><span data-bind="text: model.code"></span></td>
+              <td><span data-bind="text: model.code"></span></td>
+            </tr>
+
+
+            <!--Input bindings and form fields-->
+
+            <!--Value, valueUpdate-->
+            <tr>
+              <td>
+                <div class="caption">value</div>
+                <div class="notes">text input</div>
+              </td>
+              <td><input type="text" class="form-control input-sm" data-bind="value: model.code"/></td>
+              <td><span>model.code: </span><span data-bind="text: model.code"></span></td>
+            </tr>
+
+            <!--attr-->
+            <tr>
+              <td>
+                <div class="caption">attr</div>
+                <div class="notes">a</div>
+              </td>
+              <td>
+                <a data-bind="attr: {href: url, title: model.name}, text:model.code"></a>
+              </td>
+              <td>
+                <span>url:</span>
+                <span data-bind="text: url"></span>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="caption">attr</div>
+                <div class="notes">img</div>
+              </td>
+              <td>
+                <img data-bind="attr: {src: photoUrl, alt: model.code}" class="photoThumbnail"/>
+              </td>
+              <td>
+                <span>photoUrl:</span>
+                <span data-bind="text: photoUrl"></span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/all.min.js"></script>
+    <script src="/js/knockout-latest.debug.js"></script>
+    <script src="/assets/utils/utils.js"></script>
+    <script src="/assets/data/data.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

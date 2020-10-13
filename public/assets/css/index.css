@@ -48,3 +48,9 @@ body.container {
 .list-unstyled li {
   padding: 1rem 0;
 }
+.negative {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+.positive {
+  background-color: rgba(0, 128, 0, 0.2);
+}
